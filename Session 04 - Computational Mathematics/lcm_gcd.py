@@ -8,12 +8,11 @@ import numpy as np
 
 
 def lcm(x, y):
-    # store gcd of x and y
-    greatest = np.gcd(x, y)
     # calculate lcm given gcd
-    lowest = (np.abs(x * y)) / greatest
+    lowest = (np.abs(x * y)) / np.gcd(x, y)
     print(lowest)
 
 
 # test
+
 lcm(447618, 2011835)
