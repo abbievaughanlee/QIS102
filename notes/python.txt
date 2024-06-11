@@ -1,0 +1,72 @@
+PYTHON
+python's built in functions: https://docs.python.org/3/library/functions.html
+python data types: 
+    numbers: int, float, complex
+    bool
+    set {2, 4, 6}
+    dict {1:'a', 2:'b'}
+    sequence
+        str
+        list [2, '1', 5.7] ORDER IS NOT FIXED
+        tuple (3, 4.5, 'b') ORDER IS FIXED
+identifiers- names
+    use_snake_case
+f string: print(f"I am {age_years} years old", end = ",")
+    {} replacement field (substituting values into replacement fields is called string interpolation)
+    formatter:
+        :< left aligns the result
+        :> right aligns the result
+        :^ center aligns the result:, uses a comma as a thousand separator
+        :f fix point number format
+        :n number format
+        :% percentage format
+style guide (PEP 8) : https://peps.python.org/pep-0008/
+numpy guide: https://numpy.org/
+numpy arrays:
+    an array is a set of elements having all the same type
+    size() returns the length of an array
+    np.arange(1, 10, 1.5)
+        creates an array from a range
+        of the format (start, end, step)
+        end is not inclusive
+numpy vectorized operations
+    a vectorized scalar operation applies a function to every element in a single array
+    a vectorized array operation applies a function to elements inboth arrays that have the same index value
+Statements and Scopes
+    statement does something (sentence)
+        either a declaration, a keyword, or a function
+        statements are executed from top to bottom of a scope 
+    scope contains one or more statements (paragraph)
+        a scope in python begins with a colon
+        scopes are also denoted via indentation
+        all the statements in a scope must start at the same column
+        scopes can be nested (each inner scope is further indented)
+    a for loop introduces a scope with a colon
+    an if statement inside of a for loop is an example of a nested statement inside a scope
+Defining a function
+    def totient(n):
+        s = 1
+        for i in range(2, n):
+            if np.gcd(i, n) == 1:
+                s += 1
+        return s
+    most important function is called main()
+For loops
+    executes all the statements within its scope for each number within a given range
+    common to use the range() function to create the array of numbers passed into the for statement
+if statement
+    identifies which code block to run based upon the value of a boolean expression
+while loop: executes all the statements within its scope as long as the loop conditional remains true
+np.where returns an array of index numbers
+    factors = x[np.where(n % x == 0)]
+    the index numbers in the array x where n % x == 0.
+
+
+
+    
+	
+	
+
+
+
+

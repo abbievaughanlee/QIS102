@@ -1,0 +1,9 @@
+Square roots
+    newtons method for calculating the square root of any real x involves keeping track of low end and high end brackets which get successively closer to the actual root.
+    we start with lowEnd = 0 and highEnd = x
+    the process brackets inward keeping lowEnd^2 <= x <= highEnd^2
+    during each loop iteration, our estimate is the mean of the current lowEnd and highEnd brackets
+Several Python packages allow us to deal with different data
+    a good package to use for large numbers is mpmath
+        use when you need extreme precision: not better than numpy otherwise
+    
