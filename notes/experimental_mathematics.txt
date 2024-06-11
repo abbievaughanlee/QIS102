@@ -6,4 +6,35 @@ Square roots
 Several Python packages allow us to deal with different data
     a good package to use for large numbers is mpmath
         use when you need extreme precision: not better than numpy otherwise
-    
+Strassen's method   
+    multiplication is repeated addition: a computer is much faster at adding two numbers than multiplying them
+    matrix multiplication: requires N^3 operations (a 3 by 3 matrix requires 27 multiplications)
+    Strassen showed that the real number is about 2.37.. this becomes important when we have really large matrices
+    With N = 1000, Strassen's method is 70 x faster!
+Goldbach's conjecture
+    famous unsolved problem in number theory
+    Every even integer > 4 can be written as the sum of two odd primes
+    We don't know how to prove this..
+
+ASIDE: importing packages   
+    symPy: symbolic math package
+    becomes a full-featured computer algebra system while keeping the code as simple as 
+    itertools - functions creating iterators for efficient looping
+    python list comprehensions
+Continued fractions
+    finite, infinite with repeating sequence, infinite with repeating pattern
+    x = a0 + b0/(a1 + b1/(a2 + b2/(........)))
+    Standard continued fraction: all bn = 1
+    How do we find these fractions given a real number?
+            Start with the number: x = 3.245
+            floor(x) = 3
+            set x to x - floor(x)
+            divide 1 by x: this becomes the new x
+        loop until x = 0
+    a cf is an encoding scheme
+    all rational numbers have a cf of finite length
+    How do we expand (decode) a standard CF?
+    continued fraction of root 2: [1;{2}] INFINITE- sequence of numbers repeated (in this case, 2)
+    All quadratic surds yield an infinite cf with a repeated sequence of finite length
+    Continued fraction of e: [2; {1, 2n, 1}] for n>0: infinite  
+
