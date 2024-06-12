@@ -1,0 +1,13 @@
+DATA VISUALIZATION
+matplotlib and pyplot
+np.linspace(): creates linear spaces (array)
+    creates a linearly spaced array: inclusive
+
+vectorized operations that implicitly operate on an entire NumPy array
+note: Qt- software that helps create graphical user interfaces
+Dunder = double underscore
+    dunder variables and dunder methods
+in addition to numerical analysis, Python has packages that offer computer algebra systems
+    this allows us to define functions using higher level mathematical sumbols and then has Python provide exact solutions
+    sympy
+Polar Coordinates

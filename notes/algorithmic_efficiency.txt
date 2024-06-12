@@ -1,0 +1,20 @@
+ALGORITHMIC EFFICIENCY
+A list is a set of elements that can have varying types
+    Individual elements in a list are accessed by using their index number []
+    len() returns the length of the list
+For any vectorized operations or heterogeneous storage, use a numpy array.
+Instrumenting your code- the process of taking accurate timings of the runtime performance of key algorithms within the program
+    Python provides a time object that can measure the current CPU time of a running process to the nearest millisecond
+    We bracket the code under analysis by measuring the clock immediately before the start and again after the algorithm to calculate the elapsed time
+We measure algorithmic efficiency by estimating the impact on the total run time as the size of                   h data increases
+We are only interested in the principal (highest exponent) term which describes the overall order of the algorithm
+The order of the algorithm is expressed in Big O notation
+Optimal algorithms have the smallest possible order
+
+Quicksort: uses divide and conquer strategy to overcome the problems of bubble sort
+
+Timsort: hybrid, stable sorting algorithm
+    derived from merge sort and insertion sort
+    merges runs until criteria is fulfilled
+
+fn fact: there exists a sorting algorithm on quantum computers that is O(n) (Linear!!)
