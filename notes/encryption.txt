@@ -1,0 +1,53 @@
+INFORMATION THEORY
+
+Textual data in Python is handled with str objects
+A Python string is just an array of integers representing Unicode characters
+Python does not have character type- a character is just a string with length 1
+A Python string is a sequence type- individual elements can be directly accessed using []
+
+ASCII: American Standard Code for Information Interchange
+    Most common legacy International standard used across the Internet until 2007
+    Has been surpassed by UTF-8 in recent years
+        UTF-8 includes ASCII as a subset
+    8-bit, one byte character encoding scheme
+    Maps most of the characters of Western languages descending from Latin to a specific int value
+    1:1 correspondence between a letter and a number
+    Every character is always one byte long 
+    A file on disk is essentially just a byte array 
+        A byte is an 8-bit unsigned integer
+        Immutable (read only) once you create it
+    We can declare a byte array and load it with the contents of a file
+        Often called a buffer
+        Use the normal [] operator on a bytes object (immutable) or a byte array (mutable)
+
+Unicode: encoding scheme that can capture every known letter in every known language.. including emojis and greek symbols
+    Much larger mapping than ASCII
+    Maps every symbol to a code point (a 16 to 21 bit integer)
+
+UTF-8: encodes Unicode with code points
+    Encoding standard used for electronic communication
+    Defined by the Unicode standard UTF-8 is capable of encoding all valid Unicode code points using one to 4 one byte code units
+    Dominant encoding for the world-wide-web
+
+Caesar Shift Cipher
+    Simple but effective (for its time)
+    Shift original letters forward or backward a given number of letters in the alphabet
+    How do we figure out what shift value was used?
+        Brute force - ineffective
+        We can conduct a histogram analysis to search for recurring symbols
+            In english, 'e' is the most common letter... this can help us find the key values (e is 101)
+
+Bigram analysis
+    Most Latin languages have a unique fingerprint from their most frequent bigrams (two letter pairs)
+    In English, the bigrams TH and HE occur most Often
+    All languages have definite articles like these but each language spells theirs differently
+        This helps establish a distinct statistical profile for each language
+    Linguists and statisticians have compiled lists of the most frequent bigrams per language
+
+Different shift values used for each letter:
+    Even if we are unable to break the encryption, can we tell what language was used?
+    
+
+CONTEXT MANAGERS
+
+    

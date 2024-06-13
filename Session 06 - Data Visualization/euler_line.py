@@ -1,4 +1,10 @@
 # euler_line.py
+# Centroid = center of mass
+# Circumcenter = intersection of perpendicular side bisectors
+# Orthocenter = intersection of the altitudes
+# Incenter = bisection of angles (does not fall on the Euler line)
+# The Euler Line gives a unique statistical fingerprint for a triangle and is used in facial image recognition algorithms
+
 
 import random
 from dataclasses import dataclass
@@ -256,6 +262,7 @@ def plot_incenter(ax):
 def main():
     random.seed(prng_seed)
     plt.figure(Path(__file__).name, constrained_layout=True)
+    #show window maximized
     plt.get_current_fig_manager().window.showMaximized()
     ax = plt.gca()
 

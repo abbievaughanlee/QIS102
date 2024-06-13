@@ -1,4 +1,8 @@
 # random_walk_lattice.py
+#suppose the walker is constrained to taking unit steps in the four cardinal directions
+#imagine each walk starts at the origin and that the total steps for each walk can vary from 1 to 200
+#as a function of the number of steps taken, how far away from the origin will the average walk end
+#we will take 50000 walks of each length and compute the average final Euclidian distance from the origin
 
 from pathlib import Path
 
@@ -57,6 +61,9 @@ def main():
 
     plt.figure(Path(__file__).name, figsize=(12, 5))
 
+    # first number = number of rows of plots
+    # second number = number of columns
+    # third number
     ax = plt.subplot(1, 2, 1)
     ax.plot(steps, distances)
     ax.set_title(f"Uniform Random Walk on {dims}-D Unit Lattice")
@@ -64,7 +71,9 @@ def main():
     ax.set_ylabel("Mean Final Distance")
 
     ax = plt.subplot(1, 2, 2)
+    # y axis = distances squared
     ax.plot(steps, distances_squared, color="green")
+    # y = mx + b
     ax.plot(steps, m * steps + b, color="red", linewidth=2)
     ax.set_title(rf"$Slope\;of\;Line\times{{4}}={4*m:.4f}$")
     ax.set_xlabel("Number of Steps")
@@ -74,3 +83,4 @@ def main():
 
 
 main()
+# Note: d_avg = sqrt(pi*n) / 2

@@ -1,4 +1,6 @@
 # fahrenheit_to_celsius.py
+#plot the Fahrenheit and Celsius temperature equivalents for temperatures in Kelvin from 0K to 400K
+#plot labels the line graph of each temperature scale and shows a legend 
 
 import matplotlib.pyplot as plt
 import numpy as np
