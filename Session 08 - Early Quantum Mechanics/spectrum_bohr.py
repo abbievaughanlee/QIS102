@@ -1,7 +1,9 @@
 # spectrum_bohr.py
+# Display the predicted wavelengths for the spectral emission of the Hydrogen atom using Bohr's Atomic model
 
 print("Bohr Model for Hydrogen Spectral Lines")
 
+#constants
 e_charge = 1.602e-19
 e_mass = 9.109e-31
 permittivity = 8.854e-12
