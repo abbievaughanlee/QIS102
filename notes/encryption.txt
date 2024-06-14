@@ -47,7 +47,23 @@ Bigram analysis
 Different shift values used for each letter:
     Even if we are unable to break the encryption, can we tell what language was used?
     
-
+The advanced encryption standard
+The Key Distribution Problem
+    Symmetric schemes require both parties to share a a common key before they can communicate securely
+    Issue: how to quickly and securely distribute this key between two parties who don't know each other and are far apart
+    Physical Solution: Bob sends Alice a padlock. Alice secures her message with the padlock and sends it back. Bob can open the message with his private key and interpret the message from Alice
+Asymmetric Encription (Public Key)
+    RSA algorithm: select p, q (both prime p doesn't equal q), calculate n = p x q, calculate f(n) = (p-1)(q-1), set integer e where gcd(f(n), e) = 1, calculate d where demodf(n) = 1, public key: KU = {e, n} (key user), Private key: {d, n} (key receiver)
+    note: f(n) is totient
+Assessing Public Key Systems:
+    Pros: Key distribution is easy and scalable
+        Can be used to provide authentication and non repudiation (digital signatures)
+    Cons: Very mathematically intense (heavy CPU loading)
+        slow to use on large chunks of data
+Modern Internet Encryption:
+    https://
+    s- secure
+    
 CONTEXT MANAGERS
 
     

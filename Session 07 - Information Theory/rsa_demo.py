@@ -16,6 +16,7 @@ def extended_euclidean(a, b):
         return ca
 
 
+#trick to evaluate numbers with big exponents
 def power_modulus(b, e, n):
     r = 1
     for i in range(e.bit_length(), -1, -1):

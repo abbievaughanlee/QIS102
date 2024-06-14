@@ -4,6 +4,7 @@
 # note: there are 6 rows, 6 columns, and 6 diagonals with 4+ entries
 
 # check all rows for any 4 in a row
+
 def check_rows(player, board):
     # iterate through the rows
     for i in range(0, 6):
