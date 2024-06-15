@@ -1,0 +1,73 @@
+PROBABILITY AND STATISTICS
+
+Mean vs Variance:
+    Mean: average
+    Variance: the average distance between each number in a set and the mean of that set
+        For every data point, sum the square of the difference between the number and the mean. Divide that sum by total number of data points
+    Standard deviation: square root of variance
+    Mode: number with the most occurrences in a set 
+        multi-modal set: has multiple modes
+    Median: middle number of a set
+Bessel's Correction:
+    What if every data point isn't collected?
+    Small sample sizes: dangerous
+    Bessel corrects the sample variance by changing n to (n-1) in the equation: this helps prevent small sample sizes from producing incorrect data]
+    What is the difference between population and sample variance?
+    Applications of Bessel functions:
+        Electromagnetic waves in cylindrical waveguide
+        Pressure amplitudes of inviscid rotational flows
+        Heat conduction in a cylindrical object
+        Modes of vibration of a thin circular acoustic membrane
+        Diffusion problems on a lattice
+        Solutions to the radial Schrodinger equation for a free particle
+        Angular resolution
+        Diffraction from helical objects, including dangerous
+Variance of the Uniform Distribution:
+    There exists a "magic" number hidden in all continuous uniform random number distributions
+    Magic number = (upper limit - lower limit)^2 / variance
+        ALWAYS ~ 12
+    The statistics of many probability distributions vary greatly depending on if you are using cont or discrete sampling
+    If we are constrained to only selecting integers, we must change our definition of E(x) and o^2 (discrete)
+Binomial Distribution
+    The binomial distribution with parameters n and p is the discrete probability distribution of the number of successes in a sequence of n independent Bernoulli trials
+    Each trial asks a yes or no question with Boolean valued outcome: success (probability p) or failure (probability q = 1 - b)
+    Bernoulli showed in his Ars Conjectandi that the probability of getting exactly k successes in n independent Bernoulli trials is given by the probability mass functions
+Simulating a Normal Distribution   
+    Until recently, most computer languages only provided a uniform pseudo-random number generator
+    How do we turn a uniform distribution to a normal distribution?
+        requires advanced mathematics
+        Bean machine: device invented to demonstrate the central limit theorem, in particular that with sufficient sample size, the binomial distribution approximates a normal distribution (panchinko machine)
+            Central limit theorem: for the most commonly studied scenarios, when independent random variables are added, their sum tends toward a normal distribution ( bell curve) even if the original variables are not normally distributed
+                Given certain conditions, the arithmetic mean of a sufficiently large number of iterates of ind random variables, each with a well defined expected value and finite variance will be approximately normally distributed, regardless of the underlying distribution
+                Implies that the probabilistic and statistical methods that work for normal distributions can be applicable to many problems involving other types of distributions
+                *In quantum mechanics, position and momentum are Fourier transforms of each other.
+                    The Gaussian normal is the only function which is its own Fourier transform
+Testing for Gaussian Distribution
+    The SciPy package provides several credible quantitative distribution fit tests that stand up to peer review
+    Most statistical tests return two values:
+        The statistic: compare this value to the critical values associated with the intended distribution
+        The "p-value" used to interpret the test - if p <= a then we reject the null hypothesis H0 meaning the sample data does not fit the distribution
+The probability of a continuous random variable having an exact value is zero
+We can never measure continuous distributions exactlyThe measurement changes as we increase magnification precision
+All random variable distributions have a first and second moment which describe the long term behavior of those random numbers (first is mean second is variance)
+A perfect normal distribution ensures that 68 percent of all values fall within one standard deviation
+Tests like Pearson's chi-squared indicate if the discrepancies between the observed and expected are statistically significant
+The number of lattice points within a circle leads to another way of calculating pi- how is internal area related to number of dots within a figure
+
+
+LEARN:
+Uniform, normal, exponential, logarithmic
+student's t
+bernoulli, binomial, beta
+poisson, erlang, pareto
+skew, variance, std deviation moments of distribution
+conditional probability bayesian inference
+gamma chi squared
+maxwell boltzmann
+regression techniques
+confidence intervals
+hypothesis Testing time series analysis
+ANOVA
+stochastic processes
+markov chains
+clustering algorithms
