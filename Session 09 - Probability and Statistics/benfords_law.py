@@ -29,14 +29,15 @@ for i in range(1, 10):
         if sig(n) == i:
             j += 1
     p = j / 100_000
-    probs.append(p)
+    # add the probability as a percentage to probs array
+    probs.append(p * 100)
 
-print(probs)
 
+#plot data
 plt.figure(Path(__file__).name)
 # bar chart made out of two arrays
-plt.bar(np.arange(9), probs)
+plt.bar(np.arange(1, 10), probs)
 plt.title("BENFORD'S LAW")
-plt.xlabel("DIGITS")
-plt.ylabel("PROBABILITY")
-#plt.show()
+plt.xlabel("DIGIT")
+plt.ylabel("PROBABILITY (%)")
+plt.show()
