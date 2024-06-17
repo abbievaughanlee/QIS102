@@ -1,0 +1,26 @@
+NUMERICAL ANALYSIS
+scipy.integrate.quad:
+    SciPy's quad() uses an adaptive Simpson's rule integrator
+        default max limit of 50 subintervals into which any given integration interval can be divided
+            In extreme situations, we can improve accuracy by specifying a greater subinterval limit
+Gauss proved the Fundamental Theorem of Algebra
+    Every polynomial of degree n (n > 0) has exactly n roots in the complex number system, counting multiplicities
+    However, this rule only applies to polynomials with integer exponents
+NumPy's Polynomial class:
+    array-like
+    polynomial coefficients in order of increasing degree
+    (1, 2, 3) gives 1 + 2x + 3x**2
+    .roots() returns an n dimensional array containing the root
+Scipy fsolve():
+    a function that takes at least one (possible vector) argument and returns a value of the same length
+    returns the roots of the non linear equations defined by f(x) = 0
+Python has no understanding of unsigned integers
+Ideally, we would like a python package that would return only the valid roots (real or complex) of any equation without having to give search hints (SciPy) or apply any special exponentiation tricks (numpy)
+    Unfortunately this does not exist
+    We can try to use the sympy analytic solver which will switch to finding numerical roots if the polynomial does not have integer exponents
+        However, sympy's root finder can get stuck in an infinite loop if it cant find solutions.. we need to guard for that
+Python's Multiprocessing: older form of multi threading
+    each process believes it is it's own machine and has it's own memory
+    multi threading: each thread is contained under one memory
+mpmath has high precision
+    can handle large numbers: most numpy functions are represented

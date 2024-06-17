@@ -1,6 +1,5 @@
-# maxwell_boltzmann.py
-# calculate and plot the probability density function of the Maxwell-Boltzmann distribution
-# display three PDFs using parameters: a = 1, a = 2, a = 5\
+# maxwell_boltzmann.py: UPDATED
+# fixed problem with graph: combined all lines onto one graph
 
 import math
 from pathlib import Path
@@ -31,31 +30,18 @@ def main():
     a3 = 5
 
     plt.figure(Path(__file__).name)
-    #create three subplots for each of the parameters
-    fig, (ax0, ax1, ax2) = plt.subplots(nrows=1, ncols=3, sharex=True, figsize=(14, 6))
     
-    ax0.plot(x, pdf(x, a1))
-    ax0.set_title("a = 1")
-    ax0.set_xlabel("x")
-    ax0.set_ylabel("PDF")
-    ax0.set_xlim(0, 10) # ensure interval is set from 0 to 10 on the x-axis
+    # plot three lines for each different parameter
+    plt.plot(x, pdf(x, a1), c = "r", label = "a = 1")
+    plt.plot(x, pdf(x, a2), c = "b", label = "a = 2")
+    plt.plot(x, pdf(x, a3), c = "g", label = "a = 5")
 
-   
-    ax1.plot(x, pdf(x, a2))
-    ax1.set_title("a = 2")
-    ax1.set_xlabel("x")
-    ax1.set_ylabel("PDF")
-    ax1.set_xlim(0, 10)
-
-    ax2.plot(x, pdf(x, a3))
-    ax2.set_title("a = 5")
-    ax2.set_xlabel("x")
-    ax2.set_ylabel("PDF")
-    ax2.set_xlim(0, 10)
-
-    fig.suptitle("PDF of the Maxwell-Boltzmann Distribution")
+    plt.title("PDF of the Maxwell-Boltzmann Distribution")
+    plt.xlabel("x")
+    plt.ylabel("PDF")
+    plt.legend() #show a legend for the different values of a
+    plt.xlim(0, 10) # ensure interval is set from 0 to 10 on the x-axis
     plt.show()
-
 
 main()
 
