@@ -9,9 +9,9 @@ from scipy.interpolate import interp1d
 
 
 def main():
-    file_name = "lead_attenuation.csv"  # calls text file
+    file_name = "lead_attenuation.csv"  # calls csv file
     file_path = Path(__file__).parent / file_name
-    
+
     samples = np.genfromtxt(
         file_path, delimiter=","
     )  # generate from text file separated by a comma
@@ -35,15 +35,17 @@ def main():
     percent_format = round(100 * percent_emit, 2)
     # print results:
     print(f"Attenuation coefficient for 4.65 MeV: {photon}")
-    print(f"percent of photons passing through a 2cm thick lead shield: {percent_format} %")
+    print(
+        f"percent of photons passing through a 2cm thick lead shield: {percent_format} %"
+    )
     # plot the data
     plt.figure(Path(__file__).name)
     plt.scatter(
         energy, attenuation, zorder=3
     )  # zorder: want data points to be on top of everything
-    #plot y on a semi log scale
+    # plot y on a semi log scale
     plt.semilogy(energy_est, attenuation_est)
-    
+
     plt.xlabel("Photon's Energy (MeV) ")
     plt.ylabel("Lead Shield's Attenuation Factor")
     plt.title("LEAD ATTENUATION COEFFICIENT")
