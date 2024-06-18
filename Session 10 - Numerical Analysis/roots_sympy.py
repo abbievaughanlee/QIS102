@@ -18,7 +18,7 @@ np.set_printoptions(formatter={"complex_kind": complex_formatter})
 
 # Function to solve the equation - child process of solve with timeout
 def solve_equation(eqn, symbol, queue):
-    solutions = sympy.solve(eqn, symbol)#solves equations and puts them enqueue
+    solutions = sympy.solve(eqn, symbol)# solves equations and puts them enqueue
     queue.put(solutions)
 
 
