@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import AutoMinorLocator
 
-a, b, n = (0, 20, 640)
+a, b, n = (0, 20, 650)
 x = np.linspace(a, b, n + 1)
 y = np.sin(4 / 5 * np.pi * x)
 

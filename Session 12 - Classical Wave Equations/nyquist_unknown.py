@@ -15,7 +15,7 @@ def f(x):
 
 
 def main():
-    a, b, n = (0, 210, 420)
+    a, b, n = (0, 210, 2939)
     x = np.linspace(a, b, n + 1)
     y = f(x)
 

@@ -24,8 +24,8 @@ def main():
     # Plot Taylor Series for cos(x)
     num_terms_taylor = 5
     xs = sympy.symbols("x")
-    poly = sympy.cos(xs).series(xs, 0, num_terms_taylor).removeO()
-    eqn = sympy.lambdify(xs, poly.as_expr(), modules="numpy")
+    poly = sympy.cos(xs).series(xs, 0, num_terms_taylor).removeO() # remove big O error estimate term
+    eqn = sympy.lambdify(xs, poly.as_expr(), modules="numpy") #turns into a callable function
     print(f"Taylor Series for cos(x) = {poly}")
     plt.plot(x, eqn(x), label=f"Taylor ({num_terms_taylor} terms)")
 

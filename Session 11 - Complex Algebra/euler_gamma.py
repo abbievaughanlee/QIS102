@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+# recursive function
 def factorial_recursive(n):
     if n == 0:
         return 1
@@ -55,4 +56,4 @@ def main(zoom):
     plt.show()
 
 
-main(zoom=True)
+main(zoom=False)
