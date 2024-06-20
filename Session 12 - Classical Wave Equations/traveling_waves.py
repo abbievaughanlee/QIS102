@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
 
-run_number = 1
+run_number = 4
 
 # Amplitude (amp), Wave Number (k), Angular Velocity (w)
 wave_params = (
@@ -35,7 +35,7 @@ def anim_frame_counter():
     # (600 total frames) / (40 frames/sec) = 15 total secs
     while n < 600:
         n += 1
-        yield n
+        yield n # stay at n
 
 
 def anim_draw_frame(t):
@@ -54,7 +54,7 @@ def main():
     plt.figure(Path(__file__).name)
 
     if run_number < 6:
-        (wave1,) = plt.plot(x, y1, color="blue")
+        (wave1,) = plt.plot(x, y1, color="blue") # returns a line collection - save as wave1
         (wave2,) = plt.plot(x, y2, color="red")
     else:
         # Do not show wave1 and wave2 for run #6
@@ -68,6 +68,7 @@ def main():
     plt.xlabel("Location")
     plt.ylabel("Amplitude")
 
+    # sets up the scaffolding (state machine) - helps matplotlib do the animation
     # fmt: off
     anim = FuncAnimation(plt.gcf(),
         anim_draw_frame, anim_frame_counter, interval=25,
