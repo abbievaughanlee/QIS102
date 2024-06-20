@@ -1,11 +1,34 @@
-# fft.py
+# fourier_discrete.py
 
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import AutoMinorLocator
-from numpy.fft import fft, ifft
+
+
+def dft(ts, ys):
+    num_samples = ts.size  # ts = sample time
+    num_terms = int(num_samples / 2)  # Nyquist limit
+    # ct = complex terms of the DFT
+    ct = np.zeros(num_terms, dtype=complex)
+    for k in range(0, num_terms):  # k = filter wave number
+        for n in range(0, num_samples):  # n = sample number
+            ct[k] += ys[n] * np.exp(complex(0, (k * ts[n])))
+    ct = ct * 2 / num_samples
+    ct[0] /= 2  # DC value should NOT be doubled
+    return ct
+
+
+def idft(ts, ct):
+    num_samples = ts.size  # ts = sample time
+    num_terms = ct.size
+    # yr = reconstructed y values
+    yr = np.zeros(num_samples, dtype=complex)
+    for n in range(0, num_samples):  # n = sample number
+        for k in range(0, num_terms):  # k = filter wave number
+            yr[n] += ct[k] * np.exp(complex(0, -(k * ts[n])))
+    return yr
 
 
 def plot_samples(ax, ts, ys):
@@ -23,8 +46,8 @@ def plot_dft(ax, ct):
     # fmt: off
     ax.bar(range(0, num_terms), ct.real[:num_terms],
         color="blue", label="cosine", zorder=2)
-    ax.bar(range(0, num_terms), -ct.imag[:num_terms],
-        color="red",  label="sine", zorder=2)    
+    ax.bar(range(0, num_terms), ct.imag[:num_terms],
+        color="red",  label="sine", zorder=2)
     # fmt: on
 
     ax.grid(which="major", axis="x", color="black", linewidth=1)
@@ -34,7 +57,7 @@ def plot_dft(ax, ct):
 
     ax.xaxis.set_minor_locator(AutoMinorLocator())
     ax.yaxis.set_minor_locator(AutoMinorLocator())
-    ax.set_title("Fast Fourier Transform")
+    ax.set_title("Discrete Fourier Transform")
     ax.set_xlabel("frequency", loc="right")
     ax.set_ylabel("amplitude")
     ax.legend(loc="upper right")
@@ -43,7 +66,7 @@ def plot_dft(ax, ct):
 def plot_idft(ax, ts, yr):
     num_samples = ts.size
     ax.plot(ts, yr, color="purple")
-    ax.set_title(f"Inverse FFT ({num_samples} samples)")
+    ax.set_title(f"Inverse DFT ({num_samples} samples)")
     ax.set_xlabel("scaled time", loc="right")
     ax.set_ylabel("amplitude")
 
@@ -68,17 +91,12 @@ def plot_power_spectrum(ax, ct):
 def main(file_name):
     file_path = Path(__file__).parent / file_name
     samples = np.genfromtxt(file_path, delimiter=",")
-    ts, ys = samples.T
+    ts, ys = samples.T  # ts = sample time, ys = sample value
 
-    ct = 2 / len(ys) * fft(ys)
-    yr = len(ys) / 2 * ifft(ct)
-    ct[0] /= 2  # DC value should NOT be doubled
+    ct = dft(ts, ys)  # ct = complex terms of the DFT
+    yr = idft(ts, ct)  # yr = reconstructed y values
 
-    plt.figure(
-        Path(__file__).name + f" ({file_name})",
-        figsize=(12, 8),
-        constrained_layout=True,
-    )
+    plt.figure(file_name, figsize=(12, 8), constrained_layout=True) # lays out the plot of the figure with a border
 
     plot_samples(plt.subplot(2, 2, 1), ts, ys)
     plot_dft(plt.subplot(2, 2, 2), ct)
@@ -88,12 +106,4 @@ def main(file_name):
     plt.show()
 
 
-# file_name = "samples.csv"
-#file_name = "space_signal1.csv"
-#file_name = "space_signal2.csv"
-#file_name = "space_signal3.csv"
-#file_name = "sunspots.csv"
-# file_name = "samples_decay.csv"
-# file_name = "samples_square.csv"
-file_name = "unknown_wave.csv"
-main(file_name)
+main("samples.csv")

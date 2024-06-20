@@ -3,21 +3,20 @@
 
 import numpy as np
 
-#initialize sum to 0
+# create an array of the first 1000 natural numbers
+numbers = np.arange(1, 1001, 1)
 
-sum = 0
-#iterate through the first 1000 natural numbers and add their squared value to the sum
+# create a sum of this array
 
-for i in range(0, 1001):
-    sum += i**2
+sum = np.sum(numbers)
 
 # create the sum as determined by gauss' formula
-n = 1000
-gauss_sum = (2*(n**3) + 3*(n**2) + n)/6
+
+gauss_sum = 1000 * (1000 + 1) / 2
 
 # format the output of the two sums using a comma as the thousands separator
 
-print(f"Loop: {sum:,}")
+print(f"Forced: {sum:,}")
 print(f"Gauss' formula: {gauss_sum:,}")
 
 # check to ensure that the two calculations are equivalent

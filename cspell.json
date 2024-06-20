@@ -204,7 +204,6 @@
         "println",
         "printoptions",
         "prng",
-        "probs",
         "pulseio",
         "pwmio",
         "pygame",

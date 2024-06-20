@@ -18,11 +18,11 @@ def main():
     sample_duration = 2 * np.pi
     num_samples = 1000
 
-    ts = np.linspace(0, sample_duration, num_samples, endpoint=False)
+    ts = np.linspace(0, sample_duration, num_samples, endpoint=False) # avoid duplicate endpoints
     ys = f(ts)
 
     file_name = "samples.csv"
-    file_path = Path(__file__).parent / file_name
+    file_path = Path(__file__).parent / file_name # save as a csv
     np.savetxt(file_path, np.vstack((ts, ys)).T, fmt="%1.13f", delimiter=", ")
 
     plt.figure(Path(__file__).name)

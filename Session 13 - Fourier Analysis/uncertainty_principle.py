@@ -92,5 +92,15 @@ def main():
 main()
 
 """
-Put your comments here
+1. As the frequencies become more spread out, the certainty that the particle will likely be found at a 
+certain position increases. This is due to prolonged measurement of frequency. Basically, as more frequency
+is measured, the likelihood that the measurements are accurate increases.
+2. Due to the Heinsenberg Uncertainty Principle, as the probability of finding a particle's position increases,
+the ability to measure its frequency decreases (and vice versa). So, when only one (certain) frequency is 
+measured, it is impossible to know the particle's position. 
+3. Due to the uncertainty principle again, if a particle had 100% known momentum, it could have no measurable 
+position. I don't think that this would imply that the particle didn't exist, however. We simply wouldn't
+be able to measure it's existence. 
+
+REFERENCE: 3b1b.. great video! https://www.youtube.com/watch?v=MBnnXbOM5S4
 """

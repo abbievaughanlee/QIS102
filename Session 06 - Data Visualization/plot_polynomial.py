@@ -1,5 +1,4 @@
 # plot_polynomial.py
-#plots the same as plot_quintic.py but by using zeros and extrema points rather than equation
 
 from pathlib import Path
 

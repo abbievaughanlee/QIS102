@@ -1,9 +1,5 @@
 # factor_quadratic.py
 
-#write a python console application to display the integer factorizations of a given quadratic polynomial
-#Jx^2 + Kx + L = 0
-#the fundamental theorem of algebra shows a polynomial of degree 2 will have exactly 2 roots (either real or complex conjugate)
-
 J = 115425
 K = 3254121
 L = 379020

@@ -9,17 +9,15 @@ ranks = ["Deuce", "Three", "Four", "Five", "Six", "Seven",
          "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"]
 # fmt: on
 
-#initializes (creates) a deck 
+
 def init_deck():
     deck = np.arange(52)
     for card_pos in range(52):
-        #assigns a random number to each card
-        #PROBLEM: there can be repeated cards
         card_num = np.random.randint(52)
         deck[card_pos] = card_num
     return deck
 
-#prints each card in the deck
+
 def print_deck(deck):
     for card_pos in range(52):
         card_num = deck[card_pos]

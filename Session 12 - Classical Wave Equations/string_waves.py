@@ -7,7 +7,7 @@ import numpy as np
 from matplotlib.animation import FuncAnimation
 
 one_frame, two_plucks = True, False
-# one_frame, two_plucks = False, False
+one_frame, two_plucks = False, False
 # one_frame, two_plucks = True, True
 # one_frame, two_plucks = False, True
 

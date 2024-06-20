@@ -11,5 +11,6 @@ c = np.arange(-44.00, 105.00, 4.00)
 f = c * 1.80 + 32.0
 
 # print each pair of values on its own line
+
 for i in range(0, len(c)):
     print(f"Celcius: {c[i]}, Farenheit: {f[i]}")

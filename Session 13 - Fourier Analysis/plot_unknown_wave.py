@@ -5,8 +5,8 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-alpha = 0
-beta = 0
+alpha = 10
+beta = 3
 
 t = np.linspace(0, 2 * np.pi, 1000)
 y = np.sin(alpha * t) + np.sin(beta * t)

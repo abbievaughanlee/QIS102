@@ -1,9 +1,7 @@
 # spectrum_bohr.py
-# Display the predicted wavelengths for the spectral emission of the Hydrogen atom using Bohr's Atomic model
 
 print("Bohr Model for Hydrogen Spectral Lines")
 
-#constants
 e_charge = 1.602e-19
 e_mass = 9.109e-31
 permittivity = 8.854e-12
@@ -12,7 +10,6 @@ speed_light = 2.998e8
 
 # Bohr's formula for ground state energy
 e_0 = pow(e_charge, 4) * e_mass / (8 * pow(permittivity, 2) * pow(h_plank, 2))
-
 
 for final_orbit in range(1, 5):
     for init_orbit in range(final_orbit + 1, final_orbit + 6):
