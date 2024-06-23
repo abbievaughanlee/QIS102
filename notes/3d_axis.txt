@@ -1,0 +1,9 @@
+3D AXES IN MATPLOTLIB
+Two ways:
+1. Define a set of 3d vertices and then manually group these vertices into facets
+    This approach gives maximal rendering control but is slower
+    Leverages the capabilities of Poly3DCollection
+2. Provide three arrays containing the x, y, z vertices and then let matplotlib determine how to best connect them
+    No lines connecting the points = scatter plot 
+    Only lines connecting the points - wireframe
+    Filled polygons connecting nearby points = surface plot
