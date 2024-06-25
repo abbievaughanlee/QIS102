@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+# least squares fitting: give two vectors x and y, return slope and intercept
 def fit_linear(x, y):
     m = len(x) * np.sum(x * y) - np.sum(x) * np.sum(y)
     m = m / (len(x) * np.sum(x**2) - np.sum(x) ** 2)
@@ -17,10 +18,11 @@ def main():
     # Read experiment data from data file
     file_name = "gas.csv"
     file_path = Path(__file__).parent / file_name
-    data = np.genfromtxt(file_path, delimiter=",")
+    data = np.genfromtxt(file_path, delimiter=",") # returns a 2-d array
 
     # Convert experiment data to SI units
-    temperature = data[:, 0] + 273.15  # 1st column to kelvin
+    # for all rows, first column
+    temperature = data[:, 0] + 273.15  # 1st column to kelvin 
     volume = data[:, 1] / 1000  # 2nd column to meters cubed
 
     # Calculate line of best fit

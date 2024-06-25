@@ -38,6 +38,7 @@ def main():
         y2[i + 1] = y2[i] + (k1 + 2 * k2 + 2 * k3 + k4) / 6 * dx
 
     plt.figure(Path(__file__).name)
+    # compare euler's method and runge kutta method
     plt.plot(x, y1, lw=2, label="Euler")
     plt.plot(x, y2, lw=2, label="RK4")
     # fmt: off

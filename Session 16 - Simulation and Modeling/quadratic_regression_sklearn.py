@@ -1,4 +1,5 @@
 # quadratic_regression_sklearn.py
+# same as quadratic_regression.py but with using scikit learn
 
 from pathlib import Path
 
@@ -13,14 +14,14 @@ def fit_linear(x, y):
     # Reshape vector x to become matrix x
     x = x[:, np.newaxis]
     model = LinearRegression().fit(x, y)
-    m = model.coef_[0]
+    m = model.coef_[0] # coef is a vector of coefficients
     b = model.intercept_
     return m, b
 
 
 def fit_quadratic(x, y):
     # Reshape vector x to become matrix x
-    x = x[:, np.newaxis]
+    x = x[:, np.newaxis] # expands / redimensions a vector (general relativity: lorentz boost)
     transformer = PolynomialFeatures(degree=2, include_bias=False)
     transformer.fit(x)
     # The matrix x2 will have two columns:

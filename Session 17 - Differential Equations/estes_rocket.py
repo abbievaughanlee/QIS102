@@ -1,4 +1,8 @@
 # estes_rocket.py
+# The Estes Model Rocket has two stages with each stage containing its own Estes F15 rocket motor
+# after the first booster stage is ignited, the rocket will blast off and begin to rise using just the booster motor
+# after the first stage motors out, the booster stage with its spent motor is ejected, the second stage f15 motor ignites, and the rocket continues to ascend
+# the second stage and its motor remain part of the rocket throughout the duration of the flight
 
 from pathlib import Path
 

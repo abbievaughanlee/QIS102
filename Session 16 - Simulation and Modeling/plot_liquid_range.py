@@ -28,6 +28,7 @@ for group in range(1, 19):
 
 # Create numpy arrays from sorted elements list
 data = np.array(elements)
+# convert kelvin to celsius
 melt = np.array(data[:, 1], dtype=float) - 273.15
 boil = np.array(data[:, 2], dtype=float) - 273.15
 

@@ -1,0 +1,58 @@
+SIMULATION AND MODELING
+Dictionaries:
+    key: value   pairs (can only have one key, values can be anything)
+    capitals = {
+    "USA": "Washington D.C.",
+    "Germany": "Berlin",
+    "France": "Paris",
+    "Russia": "Moscow",
+    "India": "New Delhi",
+    "China": "Beijing",
+    }
+    Change an existing key's value:
+        capitals["USA"] = "New York"
+    Add new key-value pair:
+        capitals.update({"United Kingdom": "London"})
+        capitals["Spain"] = "Madrid"
+    Delete key-value pair:
+        del capitals["Russia"]
+JSON:
+    structured like dictionaries
+        values are also dictionaries
+
+Stuff for personal projects:
+    kaggle.com
+CSV: comma separated value
+
+Quadratic Regression:
+    Find an equation to model the tape counter as a function of playing time
+        radius is changing
+        X - number of ten minute blocks
+        Y - counter on the tape player (linear feet)
+        With a precise model, we can answer: where should we stop the tape to be exactly 45 minutes into recording?
+Scikit-learn: machine learning with python
+Linear Regression in python: important (using scikit learn)
+    from sklearn.preprocessing import PolynomialFeatures: if you will be fitting anything more than a linea
+fit linear:
+    
+def fit_linear(x, y):
+    # Reshape vector x to become matrix x
+    x = x[:, np.newaxis]
+    model = LinearRegression().fit(x, y)
+    m = model.coef_[0] # coef is a vector of coefficients
+    b = model.intercept_
+    return m, b
+
+SciPy and DifEq
+    Contains several ready to use numerical methods
+        ordinary and partial differential eqns
+        linear and nonlinear differential eqns
+        initial value problem and boundary value problems
+        both individual and systems of linked differential eqns
+        https://scipy.org/
+        https://scipy.github.io/devdocs/
+        ODE:
+            explicit Runge-Kutta method. Error is controlled assuming accuracy of the fourth order method but steps are takenusing the fifth order accurate formula
+            quartic interpolation polynomial is used for the dense output
+
+    

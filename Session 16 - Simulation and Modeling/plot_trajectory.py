@@ -1,4 +1,10 @@
 # plot_trajectory.py
+# cosmic rays entering earth's atmosphere collide with gas molecules, creating secondary particles
+# your scientist has developed an instrument to capture the trajectory of these secondary particles as they rain down
+# particle's height (in centimeters) over the final nanoseconds before its impact
+# the scientist knows the secondary particle was not accelerating and lived for only 0.1743 milliseconds
+# he wants you to determine its velocity (relative to c) and the height (in km) in the stratosphere at which it was originally emitted
+
 
 from pathlib import Path
 

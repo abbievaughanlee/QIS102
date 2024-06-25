@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 
+# embedded dictionaries
 uranium_isotopes = {
     "Uranium 233": {
         "atomic_mass": "233.03963 u",
@@ -36,6 +37,7 @@ uranium_isotopes = {
     },
 }
 
+# create file of json data
 file_name = "uranium_isotopes.json"
 file_path = Path(__file__).parent / file_name
 

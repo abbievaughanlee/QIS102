@@ -11,7 +11,7 @@ capitals = {
     "India": "New Delhi",
     "China": "Beijing",
 }
-pprint(capitals)
+pprint(capitals) # pretty print
 print()
 
 # Two different ways to add a new key-value pair
