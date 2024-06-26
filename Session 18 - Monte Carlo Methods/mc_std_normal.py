@@ -1,4 +1,6 @@
 # mc_std_normal.py
+# estimate the probability that a normally distributed random variable will fall within +- first standard deviation of its mean
+
 
 from pathlib import Path
 

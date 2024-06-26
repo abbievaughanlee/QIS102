@@ -1,4 +1,6 @@
 # mc_high_dimensions.py
+# volume of unit hyperspheres in higher dimensions (up to the twelfth dimension)
+# overlay the analytic answer using euler's gamma
 
 from pathlib import Path
 

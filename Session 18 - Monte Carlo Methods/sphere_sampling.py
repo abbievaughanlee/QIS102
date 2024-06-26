@@ -1,4 +1,5 @@
 # sphere_sampling.py
+# surface area sampling
 
 from pathlib import Path
 
@@ -7,13 +8,19 @@ import numpy as np
 
 # Create random samples within the sphere
 n = 15000
-u = np.random.rand(n) * np.pi  # poloidal angle
-v = np.random.rand(n) * 2 * np.pi  # toroidal angle
+u = np.random.rand(n)
+v = np.random.rand(n)
+
+# theta and thi randomly generated from their cumulative density functions:
+theta = 2 * np.pi * u
+thi = np.arccos(2*v - 1)
 
 # Spherical to Cartesian coordinate conversion
-x = np.sin(u) * np.sin(v)
-y = np.sin(u) * np.cos(v)
-z = np.cos(u)
+
+x = np.sin(thi) * np.cos(theta)
+y = np.sin(thi) * np.sin(theta)
+z = np.cos(thi)
+
 
 plt.figure(Path(__file__).name, figsize=(10, 8))
 ax = plt.axes(projection="3d")
@@ -26,3 +33,5 @@ ax.set_zlabel("z")
 ax.set_aspect("equal")
 plt.tight_layout()
 plt.show()
+
+

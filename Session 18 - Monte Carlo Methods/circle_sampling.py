@@ -1,4 +1,6 @@
 # circle_sampling.py
+# suppose we want to generate random points known to be inside a unit circle centered at the origin
+# instead of picking random cartesian coordinates for the sample points, we could use polar coordinates
 
 from pathlib import Path
 
@@ -7,7 +9,7 @@ import numpy as np
 
 n = 10_000
 t = np.linspace(0, 2 * np.pi, n)
-r = np.random.rand(n)
+r = np.sqrt(np.random.rand(n))
 x = r * np.cos(t)
 y = r * np.sin(t)
 

@@ -1,4 +1,6 @@
 # mc_parabola.py
+# use the Monte Carlo method to estimate and display the area under the parabola
+
 
 from pathlib import Path
 

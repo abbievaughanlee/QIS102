@@ -21,8 +21,8 @@ def main():
     theta1_initial = np.radians(10)  # degrees
     omega1_initial = 0.0  # radians/sec
 
-    pendulum2_length = 1.5  # meters
-    theta2_initial = np.radians(10)  # degrees
+    pendulum2_length = 1.0  # meters
+    theta2_initial = np.radians(50)  # degrees
     omega2_initial = 0.0  # radians/sec
 
     # Precalculate phase constants
@@ -31,7 +31,7 @@ def main():
 
     # Set model duration (seconds)
     time_initial = 0
-    time_final = 10
+    time_final = 5
 
     # Calculate trajectory of 1st pendulum
     sol = solve_ivp(
@@ -61,7 +61,7 @@ def main():
 
     plt.figure(Path(__file__).name)
     plt.plot(theta1, theta2, color="blue", lw=2)
-    plt.title("Two Pendulum Harmonograph")
+    plt.title("Two Pendulum Harmonograph: Ellipse")
     plt.gca().xaxis.set_minor_locator(AutoMinorLocator())
     plt.gca().yaxis.set_minor_locator(AutoMinorLocator())
     plt.show()

@@ -1,0 +1,34 @@
+DIGITAL LOGIC CIRCUITS
+
+Understand Classical (Boolean digital logic circuits)
+    Base conversion (base 2 to base10)
+    chain multiple logic gates together in a circuits
+    truth tables
+    half-adders and full-adders
+    memory and counters constructed from gates
+
+BOOLEAN LOGIC GATES 
+    NOT (inverter)
+    AND  (both inputs are 1)
+    NAND (both inputs are not 1)
+    OR (either input is 1: or both are 1)
+    XOR (either input is 1- EXCLUSIVE (both cannot be 1))
+    NOR (neither input is 1)
+
+    OR is a "sum" (A + B), AND is a "multiply" (A * B)
+    A NAND gate is equivalent to an inversion followed by an OR
+    a NOR gate is equivalent to an inversion followed by an AND 
+
+    AND = 3 NOTs and 1 OR
+    OR = 3 NOTs and 1 AND
+
+    Gates have 1 or 2 input lines and 1 output lines
+        Input/output lines are either:
+            False, F, Cold, Low, L, 0
+            True, T, Hot, High, H, 1
+    The left side of a truth table is counted using base 2 to ensure that every possible permutation 
+    of input states is evaluated across the entire circuit
+
+    Circuits flow (propagate state) from "Left to Right"
+        The output of one gate flows into the inputs of the next gates
+        We can evaluate a gate's output line only when we know the value for every input line entering that gate

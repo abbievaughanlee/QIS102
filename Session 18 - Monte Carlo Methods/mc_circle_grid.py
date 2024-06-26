@@ -1,4 +1,5 @@
 # mc_circle_grid.py
+# much less efficient than a random number generator
 
 from pathlib import Path
 

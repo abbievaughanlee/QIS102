@@ -9,14 +9,16 @@ import numpy as np
 def main():
     total_dots = 320 * 320  # 102,400
 
-    rng = np.random.default_rng(seed=2020)
-    x = (1 - rng.random(total_dots)) * 2 - 1
+    rng = np.random.default_rng(seed=2020) # uniform random number generator instance
+    # random values of x and y between -1 and 1
+    x = (1 - rng.random(total_dots)) * 2 - 1 # [0, 1) -> (0, 1] -> [-1, 1]
     y = (1 - rng.random(total_dots)) * 2 - 1
 
-    d = x**2 + y**2
+    d = x**2 + y**2 # distance formula
 
-    x_in = x[d <= 1.0]
-    y_in = y[d <= 1.0]
+    # boolean array indexing
+    x_in = x[d <= 1.0] # x inside of the circle
+    y_in = y[d <= 1.0] # y inside of the circle
     x_out = x[d > 1.0]
     y_out = y[d > 1.0]
 

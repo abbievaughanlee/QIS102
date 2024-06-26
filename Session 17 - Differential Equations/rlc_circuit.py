@@ -3,8 +3,6 @@
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib.ticker import AutoMinorLocator
 from scipy.integrate import solve_ivp
 
 
@@ -13,7 +11,7 @@ def model(t, y, R, L, C):
     i = y[0] # = i(t)
     i2 = y[1] # = d(i)/dt
 
-    return[(-i/(L*C)) - (R/L)*i2]
+    return[i2, (-i/(L*C)) - (R/L)*i2]
 
 
 def main():
@@ -32,7 +30,7 @@ def main():
         model,
         (time_initial, time_final),
         [i_0, 0],
-        max_step=0.01,
+        max_step=0.001,
         args=(R, L, C),
     )
     
@@ -40,10 +38,10 @@ def main():
     # plot
     plt.figure(Path(__file__).name)
     plt.plot(sol.t, sol.y[0], color="blue", lw=2)
-    plt.xlabel("time")
-    plt.ylabel("current")
+    plt.xlabel("Time (seconds)")
+    plt.ylabel("Current (Amps)")
     plt.title("LCR Circuit")
-    
+    plt.grid("True")
     plt.show()
 
 

@@ -1,4 +1,5 @@
 # mc_hypersphere.py
+# volume of a 4-dimensional hypersphere
 
 import numpy as np
 from numba import float64, vectorize
