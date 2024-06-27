@@ -1,4 +1,5 @@
 # complex_factorial.py
+# compute i factorial
 
 import numpy as np
 import scipy

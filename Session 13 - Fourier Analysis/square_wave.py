@@ -1,4 +1,4 @@
-# square_wave_instructor.py
+#square_wave.py
 
 from pathlib import Path
 
@@ -96,8 +96,7 @@ main(file_name)
 the waves of different frequencies creates a square. Because each cosine wave oscillates between 1 and -1,
 putting a large number of cosine curves in superposition makes it possible to create a square wave that 
 transitions abruptly from 1 to -1 (depending on amplitude).
-2. My guess for the reason as to why the magnitude of the DC component is 1/2 is because a cosine wave
-was offset by 1/2.
+2. My guess for the reason as to why the magnitude of the DC component is 1/2 is because it is the average value.
 3. I would assume that there are no sine components in the DFT because sine and cosine curves have a phase
 shift between them that would probably make it impossible for their superposition to create a square wave.
 """
