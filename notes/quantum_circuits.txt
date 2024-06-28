@@ -1,0 +1,41 @@
+QUANTUM CIRCUITS AND QISKIT
+
+qc = QuantumCircuit(1): creates a quantum circuit with one qubit
+    QUBITS START IN  PURE ZERO STATE ([1, 0])
+qc.x(0): x gate
+    Causes a qubit in a pure zero state to switch to one in a pure 1 state
+qc.z(0): z gate
+    Causes a qubit's phase to change signs ([0, 1] -> [0, -1])
+backend: machine that runs the circuit  
+    can be a real quantum machine or a simulation on the computer
+    backend = ()
+Once declaring the backend, you must transpile the circuit
+    transpile = transform and compile
+        ensures that the circuit will be most optimal for the backend (in terms of gates)
+    qc_transpiled = transpile(qc, backend)
+qc.save_statevector(label = "statevector")
+    saves a state vector at a stage in a circuit
+    to retrieve data:
+        state_vector = result.data(0)["statevector]
+plot_bloch_multivector(state_vector):
+    plots a state vector as a bloch sphere
+Getting Unitary matrix given a quantum circuit:
+    Save unitary matrix when creating circuit:
+    qc.save_unitary()
+    op = result.get_unitary(qc, 3) # outputs the matrix that represents the transformations
+When you run a circuit, there's a default value of 1024: measures how many times the qubit "snaps" to a zero
+and how many times it snaps to a 1. Then, it returns the "probability".
+In Qiskit, quantum states must follow this convention:
+    |MSB, ..., LSB>
+    This means that the most significant bit of the decimal index number of a tensor state appears first
+    and the least significant bit comes right before the right angle bracket
+A bloch sphere that can handle multiple qubits:
+    display(plot_state_qsphere(sv2))
+Realize that we are presently simulating tiny circuits whose state vector has small number of amplitudes
+    HUGE quantum computers are required to complete larger calculations
+    A quantum circuit having 45 qubits would require a state vector with 2**45 amplitudes... 563 TB of RAM
+    We cannot store such a large state vector in a classical computer, but we can execute that same
+    circuit thousands of times on a real quantum computer, measuring the result of each shot 
+    and then tally the outcomes to create a histogram
+        IBM currently has a physical quantum computer with 433 qubits
+        
