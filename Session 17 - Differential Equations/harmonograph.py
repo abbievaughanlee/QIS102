@@ -8,7 +8,7 @@ from matplotlib.ticker import AutoMinorLocator
 from scipy.integrate import solve_ivp
 
 
-def model(time, state_vector, phase_constant):
+def model(time, state_vector, phase_constant,):
     omega, theta = state_vector
     d_omega = -phase_constant * np.sin(theta)
     d_theta = omega
@@ -22,7 +22,7 @@ def main():
     omega1_initial = 0.0  # radians/sec
 
     pendulum2_length = 1.0  # meters
-    theta2_initial = np.radians(50)  # degrees
+    theta2_initial = np.radians(20)  # degrees
     omega2_initial = 0.0  # radians/sec
 
     # Precalculate phase constants
@@ -30,8 +30,8 @@ def main():
     phase2_constant = 9.81 / pendulum2_length
 
     # Set model duration (seconds)
-    time_initial = 0
-    time_final = 5
+    time_initial = 5
+    time_final = 10
 
     # Calculate trajectory of 1st pendulum
     sol = solve_ivp(

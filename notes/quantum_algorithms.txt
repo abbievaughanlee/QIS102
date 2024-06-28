@@ -1,0 +1,35 @@
+QUANTUM ALGORITHMS 
+
+Deutsch algorithm:
+    You are the "traveler" and you prepare two qubits in whatever state you wish
+    You approach the "oracle" and present your two qubits
+    The oracle applies one of four possible secret functions to the two qubits and returns them
+    You are free to do what you want with the qubits afterward, but at some point you must measure
+    one (and only one) of the qubits
+    Based on the single measurement, you must tell the oracle which of the four functions he applied
+    The four functions:
+        NOP - q0 qubit is not changed at all (balanced)
+        Always 0: q0 qubit is set to the zero state (constant)
+        Always 1: q0 is set to the one state (constant)
+        NOT: q0 is inverted with an X gate (balanced)
+    
+    We shall call a function f: {0, 1}**(n) -> {0, 1} balanced if exactly half of the inputs go to 0
+    and the other half go to 1. Call a function constant if all inputs go to 0 or all go to 1
+
+    The Deutsch-Jozsa algorithm solves the following problem: Suppose you are given a function which you 
+    can evaluate but cannot "see" the way it is defined. Suppose further that you are assured the 
+    function is either balanced or constant. Determine if it is balanced or constant
+
+    Deutsch-Jozsa algorithm demonstrates quantum supremacy because no classical computer can outperform
+    this quantum circuit (does not prove it!!)
+
+    With four possible secret functions, one might assume that two trips to the oracle would be required
+    to prove beyond any doubt which function was applied...
+        Deutsch changes the basis so we can answer the question with just one trip
+
+Superdense coding is a quantum communication protocol that allows transmitting two classical bits using 
+only a single qubit as the carrier
+Consequentially, superdense coding doubles the efficiency of classical information transmission
+compared to traditional methods where one qubit carries only one classical bit
+Superdense coding can be combined with other quantum protocols such as quantum key distribution to improve
+security

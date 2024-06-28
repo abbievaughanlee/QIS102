@@ -1,2 +1,0 @@
-COMPLEX  ALGEBRA
-A prime p over the integers Z is composite over the Gaussian integers Z[i] when p is the sum of two squares
